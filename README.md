@@ -18,6 +18,11 @@ $ xontrib load broot
 $ br 
 ```
 
+`broot` can also be launched with shortcut `Ctrl+N`. 
+This can be changed by `$XONSH_BROOT_KEY="c-n"` or disabled with `$XONSH_BROOT_KEY=""`. 
+(PS [PTK's keybinding guide](https://python-prompt-toolkit.readthedocs.io/en/master/pages/advanced_topics/key_bindings.html#list-of-special-keys) 
+for full list of key names.)
+
 ## Credits
 
 This package was created with [xontrib cookiecutter template](https://github.com/jnoortheen/xontrib-cookiecutter).
