@@ -3,8 +3,10 @@ import os
 import subprocess
 import tempfile
 from xonsh.built_ins import XSH
+from xonsh.tools import uncapturable
 
 
+@uncapturable
 def _br(args, stdin=None, stdout=None, stderr=None):
     cmd_file = tempfile.NamedTemporaryFile(delete=False)
 
