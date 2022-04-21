@@ -39,7 +39,6 @@ python-versions = ">=3.6"
 [package.dependencies]
 appdirs = "*"
 click = ">=7.1.2"
-dataclasses = {version = ">=0.6", markers = "python_version < \"3.7\""}
 mypy-extensions = ">=0.4.3"
 pathspec = ">=0.6,<1"
 regex = ">=2020.1.8"
@@ -70,14 +69,6 @@ description = "Cross-platform colored terminal text."
 category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-
-[[package]]
-name = "dataclasses"
-version = "0.8"
-description = "A backport of the dataclasses module for Python 3.6"
-category = "dev"
-optional = false
-python-versions = ">=3.6, <3.7"
 
 [[package]]
 name = "importlib-metadata"
@@ -218,18 +209,18 @@ python-versions = "*"
 
 [[package]]
 name = "xonsh"
-version = "0.10.1"
+version = "0.12.1"
 description = "Python-powered, cross-platform, Unix-gazing shell"
 category = "main"
 optional = false
-python-versions = ">=3.6"
+python-versions = ">=3.7"
 
 [package.extras]
-full = ["prompt-toolkit (>=3)", "pyperclip", "pygments (>=2.2)", "gnureadline", "distro", "setproctitle"]
+full = ["prompt-toolkit (>=3.0.27)", "pyperclip", "pygments (>=2.2)", "gnureadline", "distro", "setproctitle"]
 linux = ["distro"]
 mac = ["gnureadline"]
 proctitle = ["setproctitle"]
-ptk = ["prompt-toolkit (>=3.0)", "pyperclip"]
+ptk = ["prompt-toolkit (>=3.0.27)", "pyperclip"]
 pygments = ["pygments (>=2.2)"]
 zipapp = ["importlib-resources"]
 
@@ -247,8 +238,8 @@ testing = ["pytest (>=4.6)", "pytest-checkdocs (>=2.4)", "pytest-flake8", "pytes
 
 [metadata]
 lock-version = "1.1"
-python-versions = ">=3.6"
-content-hash = "4fe96a70337509007b705591605c51eee3bccb26c631b602a979624e0c572d63"
+python-versions = ">=3.7"
+content-hash = "9b60221a17bad3d99d9182b7f0c7feaabca10ed112e7e44d3cd9debadd11f8cc"
 
 [metadata.files]
 appdirs = [
@@ -273,10 +264,6 @@ click = [
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
-]
-dataclasses = [
-    {file = "dataclasses-0.8-py3-none-any.whl", hash = "sha256:0201d89fa866f68c8ebd9d08ee6ff50c0b255f8ec63a71c16fda7af82bb887bf"},
-    {file = "dataclasses-0.8.tar.gz", hash = "sha256:8479067f342acf957dc82ec415d355ab5edb7e7646b90dc6e2fd1d96ad084c97"},
 ]
 importlib-metadata = [
     {file = "importlib_metadata-4.8.1-py3-none-any.whl", hash = "sha256:b618b6d2d5ffa2f16add5697cf57a46c76a56229b0ed1c438322e4e95645bd15"},
@@ -399,7 +386,7 @@ typing-extensions = [
     {file = "typing_extensions-3.10.0.2.tar.gz", hash = "sha256:49f75d16ff11f1cd258e1b988ccff82a3ca5570217d7ad8c5f48205dd99a677e"},
 ]
 xonsh = [
-    {file = "xonsh-0.10.1.tar.gz", hash = "sha256:00409804fc38111800dbca40274224e069e4ef5af6020c27ad58f966ca3025e3"},
+    {file = "xonsh-0.12.1.tar.gz", hash = "sha256:e9aacd7272ac7c76d69d5318275b718e8e19b1a6b7ebc3cf5896baf5d2a5f7c1"},
 ]
 zipp = [
     {file = "zipp-3.5.0-py3-none-any.whl", hash = "sha256:957cfda87797e389580cb8b9e3870841ca991e2125350677b2ca83a0e99390a3"},

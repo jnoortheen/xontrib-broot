@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "xontrib-broot"
-version = "0.1.2"
+version = "0.2.1"
 description = "broot support function for xonsh shell"
 authors = ["Noortheen Raja NJ <jnoortheen@gmail.com>"]
 
@@ -34,8 +34,8 @@ Code = "https://github.com/jnoortheen/xontrib-broot"
 
 
 [tool.poetry.dependencies]
-python = ">=3.6"
-xonsh = ">=0.10"
+python = ">=3.7"
+xonsh = ">=0.12"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.0" 
