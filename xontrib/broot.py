@@ -1,31 +1,39 @@
-import builtins
 import os
 import subprocess
 import tempfile
 from xonsh.built_ins import XSH
 from xonsh.tools import uncapturable
+from contextlib import contextmanager
+
+
+@contextmanager
+def mk_temp_file() -> str:
+    fd, file_name = tempfile.mkstemp()
+    os.close(fd)
+    yield file_name
+    os.remove(file_name)
 
 
 @uncapturable
 def _br(args, stdin=None, stdout=None, stderr=None):
-    cmd_file = tempfile.NamedTemporaryFile(delete=False)
-
-    try:
-        cmds = ("broot", "--outcmd", cmd_file.name) + tuple(args)
-        if builtins.__xonsh__.env.get("XONSH_INTERACTIVE"):
-            cmds += ("--color", "yes")
-        subprocess.call(
+    with mk_temp_file() as cmd_file:
+        cmds = ("broot", "--outcmd", cmd_file) + tuple(args)
+        status_code: int = subprocess.call(
             cmds,
             stdin=stdin,
             stderr=stderr,
             stdout=stdout,
         )
-        builtins.evalx(cmd_file.read().decode())
-    finally:
-        os.remove(cmd_file.name)
+        if status_code == 0:
+            with open(cmd_file) as fr:
+                content = fr.read()
+                if content:
+                    XSH.builtins.evalx(content)
+
+    return status_code
 
 
-builtins.aliases["br"] = _br
+XSH.aliases["br"] = _br
 
 
 @XSH.builtins.events.on_ptk_create
@@ -45,3 +53,10 @@ def custom_keybindings(bindings, **kw):
     @handler("XONSH_BROOT_KEY", "c-n")
     def start_broot(event):
         _br([])
+
+
+if __name__ == "__main__":
+    from xonsh.built_ins import XSH
+
+    XSH.load()
+    data = XSH.execer.eval("")
