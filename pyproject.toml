@@ -1,46 +1,36 @@
-[tool.poetry]
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "black",
+]
+
+[tool.pdm.build]
+includes = ["xontrib"]
+
+[build-system]
+requires = ["pdm-pep517>=1.0.0"]
+build-backend = "pdm.pep517.api"
+
+[project]
+# PEP 621 project metadata
+# See https://www.python.org/dev/peps/pep-0621/
+authors = [
+    {name = "Noortheen Raja NJ", email = "jnoortheen@gmail.com"},
+]
+license = {text = "MIT"}
+requires-python = ">=3.7"
+dependencies = [
+    "xonsh>=0.12",
+]
 name = "xontrib-broot"
 version = "0.2.1"
 description = "broot support function for xonsh shell"
-authors = ["Noortheen Raja NJ <jnoortheen@gmail.com>"]
-
-license = "MIT"
 readme = "README.md"
+keywords = ["xontrib", "xonsh"]
+classifiers = ["Intended Audience :: Developers", "License :: OSI Approved :: MIT License", "Natural Language :: English", "Operating System :: OS Independent", "Topic :: System :: Shells", "Topic :: System :: System Shells", "Topic :: Terminals", "Programming Language :: Python", "Programming Language :: Python :: 3", "Programming Language :: Python :: 3.6", "Programming Language :: Python :: 3.7", "Programming Language :: Python :: 3.8"]
 
-repository = "https://github.com/jnoortheen/xontrib-broot"
-keywords = ['xontrib', 'xonsh']
-classifiers = [
-    "Intended Audience :: Developers",
-    "License :: OSI Approved :: MIT License",
-    "Natural Language :: English",
-    "Operating System :: OS Independent",
-    "Topic :: System :: Shells",
-    "Topic :: System :: System Shells",
-    "Topic :: Terminals",
-    "Programming Language :: Python",
-    "Programming Language :: Python :: 3",
-    "Programming Language :: Python :: 3.6",
-    "Programming Language :: Python :: 3.7",
-    "Programming Language :: Python :: 3.8",
-]
-
-
-packages = [{ include = "xontrib" }]
-
-[tool.poetry.urls]
+[project.urls]
 Documentation = "https://github.com/jnoortheen/xontrib-broot/blob/master/README.md"
 Code = "https://github.com/jnoortheen/xontrib-broot"
 "Issue tracker" = "https://github.com/jnoortheen/xontrib-broot/issues"
-
-
-[tool.poetry.dependencies]
-python = ">=3.7"
-xonsh = ">=0.12"
-
-[tool.poetry.dev-dependencies]
-pytest = "^6.0" 
-black = { version = "^20.8b1", allow-prereleases = true } 
-
-[build-system]
-requires = ["poetry>=0.12"]
-build-backend = "poetry.masonry.api"
+repository = "https://github.com/jnoortheen/xontrib-broot"
