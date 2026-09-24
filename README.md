@@ -1,3 +1,6 @@
+> [!IMPORTANT]  
+> The functionality has been merged with [xontrib-navigator](https://github.com/jnoortheen/xontrib-hist-navigator)
+
 # Overview
 [broot](https://github.com/Canop/broot) support function for xonsh shell
 
